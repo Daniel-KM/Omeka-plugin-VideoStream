@@ -657,13 +657,13 @@ nav a {
   font-weight: 500;
 }
 /* line 529, ../sass/screen.scss */
-#primary .pagination_list .pagination_first a, #primary .pagination_list .pagination_last a,
+#primary .pagination_list .pagination_first a, #primary .pagination_list .pagination-last a,
 #primary .pagination_list .pagination_previous a, #primary .pagination_list .pagination_next a {
   display: inline-block;
   text-indent: -9999px;
 }
 /* line 532, ../sass/screen.scss */
-#primary .pagination_list .pagination_first a:after, #primary .pagination_list .pagination_last a:after,
+#primary .pagination_list .pagination_first a:after, #primary .pagination_list .pagination-last a:after,
 #primary .pagination_list .pagination_previous a:after, #primary .pagination_list .pagination_next a:after {
   text-indent: 0;
   display: block;
@@ -674,7 +674,7 @@ nav a {
   content: "<<";
 }
 /* line 541, ../sass/screen.scss */
-#primary .pagination_list .pagination_last a:after {
+#primary .pagination_list .pagination-last a:after {
   content: ">>";
 }
 /* line 542, ../sass/screen.scss */

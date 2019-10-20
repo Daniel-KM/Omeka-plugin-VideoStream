@@ -135,7 +135,7 @@ class VideoStreamPlugin extends Omeka_Plugin_AbstractPlugin
     /**
      * Uninstalls the plugin.
      */
-    public  function hookUninstall()
+    public function hookUninstall()
     {
         // Load elements to remove.
         require_once dirname(__FILE__) . DIRECTORY_SEPARATOR . 'elements.php';
@@ -159,14 +159,17 @@ class VideoStreamPlugin extends Omeka_Plugin_AbstractPlugin
      */
     public function hookUninstallMessage()
     {
-        echo __('%sWarning%s: This will permanently delete the %s element set and all its associated metadata. You may deactivate this plugin if you do not want to lose data.%s',
-             '<p><strong>', '</strong>', 'Streaming Video', '</p>');
-     }
+        echo __(
+            '%sWarning%s: This will permanently delete the %s element set and all its associated metadata. You may deactivate this plugin if you do not want to lose data.%s',
+            '<p><strong>',
+            '</strong>',
+            'Streaming Video',
+            '</p>'
+        );
+    }
 
     /**
      * Shows plugin configuration page.
-     *
-     * @return void
      */
     public function hookConfigForm($args)
     {
@@ -180,7 +183,6 @@ class VideoStreamPlugin extends Omeka_Plugin_AbstractPlugin
      * Processes the configuration form.
      *
      * @param array Options set in the config form.
-     * @return void
      */
     public function hookConfig($args)
     {
@@ -199,8 +201,7 @@ class VideoStreamPlugin extends Omeka_Plugin_AbstractPlugin
         $action = $request->getActionName();
         if ($controller == 'items' && $action == 'show') {
             queue_css_file('jquery-ui-1.10.3.custom', 'all', false, 'css/jwplayer');
-        }
-        elseif ($controller == 'items' && in_array($action, array('edit', 'add'))
+        } elseif ($controller == 'items' && in_array($action, array('edit', 'add'))
                 && get_option('videostream_display_tuning')
             ) {
             queue_css_file('jquery-ui-1.10.3.custom', 'all', false, 'css/jwplayer');

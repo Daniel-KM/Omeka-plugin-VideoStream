@@ -2,8 +2,10 @@
     <p><?php echo __('Main of public options can be overridden by the theme.'); ?></p>
     <div class="field">
         <div class="two columns alpha">
-            <?php echo $this->formLabel('videostream_jwplayer_width_public',
-                __('Viewer Width')); ?>
+            <?php echo $this->formLabel(
+    'videostream_jwplayer_width_public',
+    __('Viewer Width')
+); ?>
         </div>
         <div class='inputs five columns omega'>
             <?php echo $this->formText('videostream_jwplayer_width_public', get_option('videostream_jwplayer_width_public'), array('size' => 5)); ?>
@@ -14,8 +16,10 @@
     </div>
     <div class="field">
         <div class="two columns alpha">
-            <?php echo $this->formLabel('videostream_jwplayer_height_public',
-                __('Viewer Height')); ?>
+            <?php echo $this->formLabel(
+    'videostream_jwplayer_height_public',
+    __('Viewer Height')
+                ); ?>
         </div>
         <div class='inputs five columns omega'>
             <?php echo $this->formText('videostream_jwplayer_height_public', get_option('videostream_jwplayer_height_public'), array('size' => 5)); ?>
@@ -26,13 +30,18 @@
     </div>
     <div class="field">
         <div class="two columns alpha">
-            <?php echo $this->formLabel('videostream_jwplayer_external_control',
-                __('Use External Controls')); ?>
+            <?php echo $this->formLabel(
+                    'videostream_jwplayer_external_control',
+                    __('Use External Controls')
+                ); ?>
         </div>
         <div class='inputs five columns omega'>
             <p>
-                <?php echo $this->formCheckbox('videostream_jwplayer_external_control', true,
-                    array('checked' => (boolean) get_option('videostream_jwplayer_external_control'))); ?>
+                <?php echo $this->formCheckbox(
+                    'videostream_jwplayer_external_control',
+                    true,
+                    array('checked' => (bool) get_option('videostream_jwplayer_external_control'))
+                ); ?>
                 <?php echo __('Display Specific Segment Using External Controls'); ?>
             </p>
             <p class="explanation">
@@ -44,13 +53,18 @@
     </div>
     <div class="field">
         <div class="two columns alpha">
-            <?php echo $this->formLabel('videostream_display_current',
-                __('Display Current')); ?>
+            <?php echo $this->formLabel(
+                    'videostream_display_current',
+                    __('Display Current')
+                    ); ?>
         </div>
         <div class='inputs five columns omega'>
             <p>
-                <?php echo $this->formCheckbox('videostream_display_current', true,
-                    array('checked' => (boolean) get_option('videostream_display_current'))); ?>
+                <?php echo $this->formCheckbox(
+                        'videostream_display_current',
+                        true,
+                        array('checked' => (bool) get_option('videostream_display_current'))
+                ); ?>
                 <?php echo __('Display information about currently playing video segment'); ?>
             </p>
             <p class="explanation">
@@ -62,13 +76,18 @@
     </div>
     <div class="field">
         <div class="two columns alpha">
-            <?php echo $this->formLabel('videostream_jwplayer_autostart',
-                __('Autostart Video')); ?>
+            <?php echo $this->formLabel(
+                    'videostream_jwplayer_autostart',
+                    __('Autostart Video')
+                    ); ?>
         </div>
         <div class='inputs five columns omega'>
             <p>
-                <?php echo $this->formCheckbox('videostream_jwplayer_autostart', true,
-                    array('checked' => (boolean) get_option('videostream_jwplayer_autostart'))); ?>
+                <?php echo $this->formCheckbox(
+                        'videostream_jwplayer_autostart',
+                        true,
+                        array('checked' => (bool) get_option('videostream_jwplayer_autostart'))
+                ); ?>
                 <?php echo __('Should the video start playing when the page is loaded'); ?>
             </p>
             <p class="explanation">
@@ -78,29 +97,43 @@
     </div>
     <div class="field">
         <div class="two columns alpha">
-            <?php echo $this->formLabel('videostream_jwplayer_streaming_protocols',
-                __('Streaming Protocols')); ?>
+            <?php echo $this->formLabel(
+                    'videostream_jwplayer_streaming_protocols',
+                    __('Streaming Protocols')
+                    ); ?>
         </div>
         <div class='inputs five columns omega'>
             <ul style="list-style-type: none;">
                 <li>
-                    <?php echo $this->formCheckbox('videostream_jwplayer_flash_streaming', true,
-                        array('checked' => (boolean) get_option('videostream_jwplayer_flash_streaming'))); ?>
+                    <?php echo $this->formCheckbox(
+                        'videostream_jwplayer_flash_streaming',
+                        true,
+                        array('checked' => (bool) get_option('videostream_jwplayer_flash_streaming'))
+                ); ?>
                     <?php echo __('Flash Streaming'); ?>
                 </li>
                 <li>
-                    <?php echo $this->formCheckbox('videostream_jwplayer_flash_primary', true,
-                        array('checked' => (boolean) get_option('videostream_jwplayer_flash_primary'))); ?>
+                    <?php echo $this->formCheckbox(
+                    'videostream_jwplayer_flash_primary',
+                    true,
+                    array('checked' => (bool) get_option('videostream_jwplayer_flash_primary'))
+                        ); ?>
                     <?php echo __('Use flash if possible'); ?>
                 </li>
                 <li>
-                    <?php echo $this->formCheckbox('videostream_jwplayer_http_streaming', true,
-                        array('checked' => (boolean) get_option('videostream_jwplayer_http_streaming'))); ?>
+                    <?php echo $this->formCheckbox(
+                            'videostream_jwplayer_http_streaming',
+                            true,
+                            array('checked' => (bool) get_option('videostream_jwplayer_http_streaming'))
+                        ); ?>
                     <?php echo __('HTTP Streaming'); ?>
                 </li>
                 <li>
-                    <?php echo $this->formCheckbox('videostream_jwplayer_hls_streaming', true,
-                        array('checked' => (boolean) get_option('videostream_jwplayer_hls_streaming'))); ?>
+                    <?php echo $this->formCheckbox(
+                            'videostream_jwplayer_hls_streaming',
+                            true,
+                            array('checked' => (bool) get_option('videostream_jwplayer_hls_streaming'))
+                        ); ?>
                     <?php echo __('HLS (Apple) Streaming'); ?>
                 </li>
             </ul>
@@ -121,13 +154,18 @@
 <fieldset id="fieldset-videostream-admin-theme"><legend><?php echo __('Admin Theme'); ?></legend>
     <div class="field">
         <div class="two columns alpha">
-            <?php echo $this->formLabel('videostream_display_tuning',
-                __('Segment Tuning Panel')); ?>
+            <?php echo $this->formLabel(
+                            'videostream_display_tuning',
+                            __('Segment Tuning Panel')
+                        ); ?>
         </div>
         <div class='inputs five columns omega'>
             <p>
-                <?php echo $this->formCheckbox('videostream_display_tuning', true,
-                    array('checked' => (boolean) get_option('videostream_display_tuning'))); ?>
+                <?php echo $this->formCheckbox(
+                            'videostream_display_tuning',
+                            true,
+                            array('checked' => (bool) get_option('videostream_display_tuning'))
+                ); ?>
                 <?php echo __('Display Segment Tuning Panel'); ?>
             </p>
             <p class="explanation">

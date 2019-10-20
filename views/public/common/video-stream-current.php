@@ -20,10 +20,11 @@ $items = get_records(
             ),
         ),
     ),
-    null);
+    null
+);
 
 if (!empty($items)):
-    foreach($items as $item):
+    foreach ($items as $item):
         $segmentStart = metadata($item, array('Streaming Video', 'Segment Start'));
         $segmentEnd = metadata($item, array('Streaming Video', 'Segment End'));
         $segmentDescription = metadata($item, array('Dublin Core', 'Description'));
