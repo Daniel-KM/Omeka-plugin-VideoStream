@@ -13,7 +13,6 @@ class VideoStream_View_Helper_SegmentTuningForm extends Zend_View_Helper_Abstrac
     public function segmentTuningForm($item = null)
     {
         $view = $this->view;
-        $db = get_db();
 
         if (is_null($item)) {
             $item = get_current_record('item');

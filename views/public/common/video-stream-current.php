@@ -1,8 +1,13 @@
 <?php
-$orig_item = $item;
+/**
+ * @var Omeka_View $this
+ * @var Item $item
+ * @var string $video_filename
+ */
+
 $elementIds = json_decode(get_option('videostream_elements_ids'), true);
 
-$items = get_records(
+$sequences = get_records(
     'Item',
     array(
         'collection' => $item->collection_id,
@@ -23,15 +28,16 @@ $items = get_records(
     null
 );
 
-if (!empty($items)):
-    foreach ($items as $item):
-        $segmentStart = metadata($item, array('Streaming Video', 'Segment Start'));
-        $segmentEnd = metadata($item, array('Streaming Video', 'Segment End'));
-        $segmentDescription = metadata($item, array('Dublin Core', 'Description'));
+if (!empty($sequences)):
+    foreach ($sequences as $sequence):
+        $segmentStart = metadata($sequence, array('Streaming Video', 'Segment Start'));
+        $segmentEnd = metadata($sequence, array('Streaming Video', 'Segment End'));
+        $segmentTitle = metadata($sequence, array('Dublin Core', 'Title'));
+        $segmentDescription = metadata($sequence, array('Dublin Core', 'Description'));
     ?>
 <div class="scene" id="<?php echo $segmentStart; ?>" title="<?php echo $segmentEnd; ?>" style="display:none;">
     <h2><?php echo __('Current video segment:'); ?></h2>
-    <h3><?php echo link_to_item(metadata($item, array('Dublin Core', 'Title')), array(), 'show', $item); ?></h3>
+    <h3><?php echo link_to_item($segmentTitle, array(), 'show', $sequence); ?></h3>
     <div style="overflow:auto; max-height:150px;">
         <p><?php echo $segmentDescription; ?></p>
     </div>
@@ -39,7 +45,7 @@ if (!empty($items)):
 </div>
     <?php
     endforeach;
-    set_current_record('item', $orig_item);
+    set_current_record('item', $item);
 ?>
 <hr style="color:lt-gray;" />
 <script type="text/javascript">

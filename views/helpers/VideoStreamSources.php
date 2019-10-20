@@ -12,8 +12,6 @@ class VideoStream_View_Helper_VideoStreamSources extends Zend_View_Helper_Abstra
      */
     public function videoStreamSources($item = null)
     {
-        $view = $this->view;
-
         if (is_null($item)) {
             $item = get_current_record('item');
         }
